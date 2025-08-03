@@ -19,7 +19,7 @@ const MyProfile = () => {
   // Fetch user profile data (bio)
   const fetchUserDetails = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/users/${user.email}`);
+      const res = await axios.get(`https://codenet-server.vercel.app/users/${user.email}`);
       setUserData(res.data);
     } catch (err) {
       console.error('Failed to load user data:', err);
@@ -29,7 +29,7 @@ const MyProfile = () => {
   // Fetch user's posts
   const fetchMyPosts = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/posts-all?email=${user.email}`);
+      const res = await axios.get(`https://codenet-server.vercel.app/posts-all?email=${user.email}`);
       setPosts(res.data.reverse());
     } catch (err) {
       console.error('Failed to load posts:', err);
@@ -58,7 +58,7 @@ const MyProfile = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3000/posts/${postId}?email=${user.email}`);
+          await axios.delete(`https://codenet-server.vercel.app/posts/${postId}?email=${user.email}`);
           setPosts((prev) => prev.filter(p => p._id !== postId));
           Swal.fire('Deleted!', 'Your post has been removed.', 'success');
         } catch (error) {
@@ -77,7 +77,7 @@ const MyProfile = () => {
   }
 
   return (
-    <div className="px-6 md:px-16 min-h-[90vh] py-10">
+    <div className="px-3 md:px-16 min-h-[90vh] py-10">
       {/* Profile Card */}
       <div className="max-w-xl mx-auto bg-white rounded-3xl p-8 border shadow text-center mb-10 relative">
         <img

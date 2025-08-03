@@ -22,7 +22,7 @@ const Home = () => {
 
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:3000/posts');
+      const res = await axios.get('https://codenet-server.vercel.app/posts');
       setPosts(res.data.reverse());
     } catch (error) {
       console.error('Failed to fetch posts:', error);
@@ -33,7 +33,7 @@ const Home = () => {
   // Fetch user bio on mount and when user changes
   useEffect(() => {
     if (user?.email) {
-      axios.get(`http://localhost:3000/users/${user.email}`)
+      axios.get(`https://codenet-server.vercel.app/users/${user.email}`)
         .then(res => {
           const bio = res.data.bio || '';
           setUserBio(bio);
@@ -59,7 +59,7 @@ const Home = () => {
     }
 
     try {
-      await axios.patch(`http://localhost:3000/users/${user.email}`, {
+      await axios.patch(`https://codenet-server.vercel.app/users/${user.email}`, {
         bio: bioInput.trim(),
       });
       setUserBio(bioInput.trim());
@@ -86,7 +86,7 @@ const Home = () => {
     };
 
     try {
-      const res = await axios.post('http://localhost:3000/posts', newPost);
+      const res = await axios.post('https://codenet-server.vercel.app/posts', newPost);
       if (res.data.insertedId) {
         await fetchPosts();
         setContent('');
@@ -122,7 +122,7 @@ const Home = () => {
     }
 
     try {
-      await axios.patch(`http://localhost:3000/posts/${postId}`, {
+      await axios.patch(`https://codenet-server.vercel.app/posts/${postId}`, {
         likes: updatedLikes,
         dislikes: updatedDislikes
       });
@@ -155,7 +155,7 @@ const Home = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3000/posts/${postId}?email=${user.email}`);
+          await axios.delete(`https://codenet-server.vercel.app/posts/${postId}?email=${user.email}`);
           setPosts(prev => prev.filter(p => p._id !== postId));
           Swal.fire('Deleted!', 'Your post has been deleted.', 'success');
         } catch (err) {

@@ -1,12 +1,70 @@
-# React + Vite
+# Codnet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Codnet is a modern social platform tailored for developers and tech enthusiasts to share ideas, posts, and connect with like-minded people. Users can create profiles, post content, react with likes or dislikes, and update their bios—all in a clean and responsive React-based interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**
+  - React (with hooks and context API)
+  - React Router DOM for routing
+  - Tailwind CSS for utility-first styling
+  - React Icons for UI icons
+  - Axios for HTTP requests
+  - SweetAlert2 for beautiful alerts and confirmations
+- **Backend**
+  - Node.js with Express.js framework
+  - RESTful API endpoints
+- **Authentication**
+  - Firebase Authentication (Email & Password)
+- **Database**
+  - MongoDB (Atlas or local)
+- **Hosting**
+  - Frontend deployed on Vercel or Netlify
+  - Backend deployed on Vercel, Render, or Heroku
+- **Other**
+  - JWT for token-based authorization (if implemented)
+  - Optional: TanStack Query for data fetching state management
+  - Optional: Framer Motion for animations
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Features
+
+- **User Authentication**
+  - Sign up and login via Firebase Authentication
+  - Email verification and password reset support
+- **Profile Management**
+  - View profile info including avatar, name, email, and bio
+  - Edit and update bio content dynamically
+  - Update profile picture and display name (optional)
+- **Posts**
+  - Create new posts with text content
+  - View all posts sorted by newest first
+  - Like and dislike posts (counts displayed)
+  - Delete own posts with confirmation dialogs
+- **UI/UX**
+  - Responsive design optimized for desktop and mobile
+  - Loading spinners for async operations
+  - SweetAlert2 modals for user-friendly confirmations and alerts
+  - Clean, modern design using Tailwind CSS
+- **Routing**
+  - Protected routes for authenticated users
+  - Layout components for consistent navigation and footer
+- **Error Handling**
+  - Graceful handling and display of API errors
+  - Disabled buttons when input is invalid or empty
+
+---
+
+## 🛠️ Setup Instructions
+
+### Prerequisites
+
+- Node.js (v14+ recommended)
+- npm or yarn
+- MongoDB database (Atlas or local)
+- Firebase project for authentication
+
+

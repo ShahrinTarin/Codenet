@@ -41,7 +41,7 @@ const Register = () => {
         await sendEmailVerification(user);
       }
 
-      await axios.post('http://localhost:3000/register', {
+      await axios.post('https://codenet-server.vercel.app/register', {
         name,
         email,
         photoURL: photo,
@@ -68,7 +68,7 @@ const Register = () => {
       const result = await googleLogIn();
       const user = result.user;
 
-      await axios.post('http://localhost:3000/social-login', {
+      await axios.post('https://codenet-server.vercel.app/social-login', {
         name: user.displayName,
         email: user.email,
         photoURL: user.photoURL,

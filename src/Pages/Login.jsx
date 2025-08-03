@@ -19,7 +19,7 @@ const Login = () => {
       const result = await googleLogIn();
       const user = result.user;
 
-      await axios.post('http://localhost:3000/social-login', {
+      await axios.post('https://codenet-server.vercel.app/social-login', {
         name: user.displayName,
         email: user.email,
         photoURL: user.photoURL,
