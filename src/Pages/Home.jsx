@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
 import { FaThumbsUp, FaThumbsDown, FaTrash, FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router';
+import Loading from '../components/Loading';
 
 const Home = () => {
   const { user, loading: authLoading } = useContext(AuthContext);
@@ -168,9 +169,7 @@ const Home = () => {
 
    if (authLoading || loading) {
     return (
-      <div className="flex justify-center items-center min-h-[90vh]">
-        <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600"></div>
-      </div>
+      <Loading></Loading>
     );
   }
 
